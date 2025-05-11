@@ -1,0 +1,17 @@
+﻿services:
+  sigmabank:
+    image: sigmabank
+    build:
+      context: .
+      dockerfile: src/SigmaBank/Dockerfile
+      
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: sigma-bank
+    ports:
+      - "5555:5432"
+    restart: unless-stopped
+    

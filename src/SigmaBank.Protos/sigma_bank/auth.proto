@@ -1,0 +1,63 @@
+﻿syntax = "proto3";
+
+package xplago.sigma_bank;
+
+option csharp_namespace = "SigmaBank.Protos";
+
+service AuthService {
+  rpc SendConfirmationCode(SendConfirmationCodeRequest) returns (SendConfirmationCodeResponse);
+  
+  // auth required
+  rpc Confirm(ConfirmRequest) returns (ConfirmResponse);
+
+  // auth required
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+
+  // auth required
+  rpc Login(LoginRequest) returns (LoginResponse);
+}
+
+message Token {
+  string value = 1;
+}
+
+// SendConfirmationCode
+
+message SendConfirmationCodeRequest {
+  string phoneNumber = 1;
+}
+
+message SendConfirmationCodeResponse {
+  Token token = 1;
+}
+
+// Confirm
+
+message ConfirmRequest {
+  string code = 1;
+}
+
+message ConfirmResponse {
+  Token token = 1;
+  bool needRegistration = 2;
+}
+
+// Register
+
+message RegisterRequest {
+  string firstName = 1;
+  string lastName = 2;
+  int32 age = 3;
+}
+
+message RegisterResponse {
+  Token token = 1;
+}
+
+// Login
+
+message LoginRequest {}
+
+message LoginResponse {
+  Token token = 1;
+}

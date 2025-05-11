@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    
+
+    <ItemGroup>
+        <PackageReference Include="Grpc.AspNetCore" />
+        <PackageReference Include="Grpc.AspNetCore.Server.Reflection" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SigmaBank.Core\SigmaBank.Core.csproj" />
+      <ProjectReference Include="..\SigmaBank.Infrastructure\SigmaBank.Infrastructure.csproj" />
+      <ProjectReference Include="..\SigmaBank.Services\SigmaBank.Services.csproj" />
+    </ItemGroup>
+
+</Project>

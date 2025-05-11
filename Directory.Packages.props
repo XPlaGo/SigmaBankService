@@ -1,0 +1,42 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <EnablePackageVersionOverride>false</EnablePackageVersionOverride>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageVersion>
+    <PackageVersion Include="Dapper" Version="2.1.66" />
+    <PackageVersion Include="FluentMigrator" Version="7.1.0" />
+    <PackageVersion Include="FluentMigrator.Extensions.Postgres" Version="7.1.0" />
+    <PackageVersion Include="FluentMigrator.Runner" Version="7.1.0" />
+    <PackageVersion Include="Google.Protobuf" Version="3.31.0-rc2" />
+    <PackageVersion Include="Grpc.AspNetCore" Version="2.64.0" />
+    <PackageVersion Include="Google.Api.CommonProtos" Version="2.16.0" />
+    <PackageVersion Include="Grpc.AspNetCore.Server.Reflection" Version="2.71.0" />
+    <PackageVersion Include="Grpc.Core.Api" Version="2.71.0" />
+    <PackageVersion Include="Grpc.Tools" Version="2.72.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.4" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.0-preview.3.25171.5" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0-preview.3.25171.5" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.0" />
+    <PackageVersion Include="Npgsql" Version="9.0.3" />
+    <PackageVersion Include="SourceKit.Analyzers.Collections" Version="1.0.36" />
+    <PackageVersion Include="SourceKit.Analyzers.Enumerable" Version="1.0.36" />
+    <PackageVersion Include="SourceKit.Analyzers.MemberAccessibility" Version="1.0.31" />
+    <PackageVersion Include="SourceKit.Analyzers.Nullable" Version="1.0.36" />
+    <PackageVersion Include="SourceKit.Analyzers.Properties" Version="1.0.36" />
+    <PackageVersion Include="Itmo.Dev.Editorconfig" Version="1.0.7" />
+    <PackageVersion Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageVersion>
+    <PackageVersion Include="xunit" Version="2.9.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageVersion>
+  </ItemGroup>
+</Project>
