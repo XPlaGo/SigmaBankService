@@ -29,6 +29,11 @@ internal class AuthGrpcService(
     [AuthorizeToken(TokenTypes.Verification)]
     public override async Task<ConfirmResponse> Confirm(ConfirmRequest request, ServerCallContext context)
     {
+        if (request.Code.StartsWith("111"))
+        {
+            throw new RpcException(new Status(StatusCode.InvalidArgument, "Invalid code"));
+        }
+
         string phoneNumber = ResolvePhoneNumber(context);
         string result = tokenService.GenerateConfirmedToken(phoneNumber);
 

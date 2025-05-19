@@ -11,7 +11,6 @@ public class UsersService(IUsersRepository usersRepository) : IUsersService
     {
         var user = new User
         {
-            Id = 0,
             PhoneNumber = model.PhoneNumber,
             FirstName = model.FirstName,
             LastName = model.LastName,

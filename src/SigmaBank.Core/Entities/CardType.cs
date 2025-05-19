@@ -2,7 +2,8 @@
 
 public enum CardType
 {
-    Mastercard,
-    Visa,
-    Mir,
+    Unknown = 0,
+    Mastercard = 1,
+    Visa = 2,
+    MIR = 3,
 }

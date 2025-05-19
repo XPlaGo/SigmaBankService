@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package xplago.sigma_bank;
+
+option csharp_namespace = "SigmaBank.Protos";
+
+service AccountsService {
+  rpc GetAccounts(GetAccountsRequest) returns (GetAccountsResponse);
+  
+  rpc GetCardPrivateData(GetCardPrivateDataRequest) returns (GetCardPrivateDataResponse);
+}
+
+enum CardType {
+  CARD_TYPE_UNKNOWN = 0;
+  CARD_TYPE_MASTERCARD = 1;
+  CARD_TYPE_VISA = 2;
+  CARD_TYPE_MIR = 3;
+}
+
+message Card {
+  int64 id = 1;
+  int64 account_id = 2;
+  string number = 3;
+  CardType type = 4;
+}
+
+message Account {
+  int64 id = 1;
+  int64 user_id = 2;
+  double amount = 3;
+  repeated Card cards = 4;
+}
+
+// GetAccountsByUserId
+
+message GetAccountsRequest {
+}
+
+message GetAccountsResponse {
+  repeated Account accounts = 1;
+}
+
+// GetCardPrivateData
+
+message GetCardPrivateDataRequest {
+  int64 card_id = 1;
+}
+
+message GetCardPrivateDataResponse {
+  google.protobuf.Timestamp expiration_date = 1;
+  string code = 2;
+}

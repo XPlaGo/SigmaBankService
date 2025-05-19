@@ -23,7 +23,7 @@ public class UserRepository(IConnectionProvider connectionProvider) : IUsersRepo
                             @LastName,
                             @Age)
                     returning
-                        id as Id,
+                        user_id as UserId,
                         phone_number as PhoneNumber,
                         first_name as FirstName,
                         last_name as LastName,
@@ -53,14 +53,14 @@ public class UserRepository(IConnectionProvider connectionProvider) : IUsersRepo
         const string query = """
                 select 1
                 from users
-                where id = @Id;
+                where user_id = @UserId;
                 """;
 
         var command = new CommandDefinition(
             query,
             parameters: new
             {
-                Id = userId,
+                UserId = userId,
             },
             cancellationToken: cancellationToken);
 
@@ -98,20 +98,20 @@ public class UserRepository(IConnectionProvider connectionProvider) : IUsersRepo
 
         const string query = """
                     select
-                        id as Id,
+                        user_id as UserId,
                         phone_number as PhoneNumber,
                         first_name as FirstName,
                         last_name as LastName,
                         age as Age
                     from users
-                    where id = @Id;
+                    where user_id = @UserId;
                     """;
 
         var command = new CommandDefinition(
             query,
             parameters: new
             {
-                Id = userId,
+                UserId = userId,
             },
             cancellationToken: cancellationToken);
 
@@ -126,7 +126,7 @@ public class UserRepository(IConnectionProvider connectionProvider) : IUsersRepo
 
         const string query = """
                     select
-                        id as Id,
+                        user_id as UserId,
                         phone_number as PhoneNumber,
                         first_name as FirstName,
                         last_name as LastName,

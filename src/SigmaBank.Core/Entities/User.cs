@@ -2,7 +2,7 @@
 
 public record User
 {
-    public int Id { get; init; }
+    public long UserId { get; init; }
 
     public string PhoneNumber { get; init; } = string.Empty;
 

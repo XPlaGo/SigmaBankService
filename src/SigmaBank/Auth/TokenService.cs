@@ -35,7 +35,7 @@ internal class TokenService(IOptions<TokenSettings> settings) : ITokenService
     public string GenerateAuthorizedToken(User user)
     {
         var claims = new ClaimsIdentity();
-        claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
+        claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()));
         claims.AddClaim(new Claim(ClaimTypes.GivenName, user.FirstName));
         claims.AddClaim(new Claim(ClaimTypes.Surname, user.LastName));
         claims.AddClaim(new Claim(ClaimTypes.Role, TokenTypes.Authorized.ToString()));
