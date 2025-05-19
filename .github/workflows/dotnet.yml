@@ -26,11 +26,11 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Docker Setup Compose
-      uses: docker/setup-compose-action@v1.2.0
-      with:
-        version: v2.35.1
-        cache-binary: false
+  #  - name: Docker Setup Compose
+  #    uses: docker/setup-compose-action@v1.2.0
+  #    with:
+  #      version: v2.35.1
+  #      cache-binary: false
     - name: docker-compose down
       run: docker compose down
     - name: docker-compose up
