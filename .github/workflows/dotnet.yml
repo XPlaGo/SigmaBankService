@@ -29,7 +29,6 @@ jobs:
     - name: Docker Setup Compose
       uses: docker/setup-compose-action@v1.2.0
       with:
-        # Compose version. (eg. v2.32.4)
-        version: 3
+        version: v2.35.1
         cache-binary: false
           
